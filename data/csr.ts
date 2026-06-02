@@ -10,7 +10,7 @@ export const CSR_STATS: CSRStat[] = [
   },
   {
     label: 'Scholars',
-    target: 25,
+    target: 100,
     suffix: '',
     description: 'Empowering students through our scholarship programs.',
     iconType: 'scholars'
