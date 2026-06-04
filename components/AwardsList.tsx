@@ -23,7 +23,7 @@ const AwardsList: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                 <div className="relative p-4">
-                  <span className="text-white text-xs fon t-bold uppercase tracking-widest bg-black/30 px-2 py-1 rounded">{award.year}</span>
+                  <span className="text-white text-xs font-bold uppercase tracking-widest bg-black/30 px-2 py-1 rounded">{award.year}</span>
                   <h3 className="text-white font-bold text-lg mt-2 leading-snug drop-shadow">{award.title}</h3>
                 </div>
               </div>

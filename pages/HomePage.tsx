@@ -62,16 +62,16 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className="flex justify-center mb-8 md:mb-8">
-              <div className="inline-flex bg-gray-100 rounded-full p-1">
+              <div className="flex flex-wrap sm:inline-flex bg-gray-100 rounded-2xl sm:rounded-full p-1 gap-1 sm:gap-0 justify-center">
                 {['south', 'central'].map(region => (
                   <button
                     key={region}
                     onClick={() => setActiveRegion(region as 'south' | 'central')}
-                    className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
+                    className={`px-4 sm:px-8 py-3 rounded-xl sm:rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
                       ${activeRegion === region
                         ? 'bg-green-600 text-white shadow-md scale-105'
                         : 'text-gray-500 hover:text-green-600 hover:scale-105'}
-                      ${region !== 'south' ? 'ml-2' : ''}
+                      ${region !== 'south' ? 'ml-0 sm:ml-2' : ''}
                     `}
                     style={{ transition: 'all 0.3s cubic-bezier(.4,0,.2,1)' }}
                   >

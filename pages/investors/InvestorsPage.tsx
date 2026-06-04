@@ -3,7 +3,7 @@ import PageLayout from '../PageLayout';
 
 const InvestorsPage: React.FC = () => (
   <PageLayout>
-    <section id="governance" className="bg-linear-to-r from-green-700 to-emerald-600 pt-18 md:pt-10 pb-10">
+    <section id="governance" className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-12 pb-10">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white">Investor Relations</h1>
       </div>
@@ -57,7 +57,7 @@ const InvestorsPage: React.FC = () => (
           </div>
 
           {/* Contact Card */}
-          <div className="bg-linear-to-r from-green-600 to-emerald-600 rounded-3xl p-12 text-center shadow-lg">
+          <div className="bg-linear-to-r from-green-600 to-emerald-600 rounded-3xl p-6 md:p-12 text-center shadow-lg">
             <div className="mb-6">
               <svg className="w-16 h-16 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -66,18 +66,18 @@ const InvestorsPage: React.FC = () => (
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Get in Touch
             </h3>
-            <p className="text-white/90 text-lg mb-8">
+            <p className="text-white/90 text-base md:text-lg mb-8">
               For any information requests, please reach out to us directly
             </p>
             <a 
               href="mailto:investorrelations@ovialand.com" 
-              className="inline-flex items-center gap-2 bg-white text-green-600 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition shadow-lg"
+              className="inline-flex items-center gap-2 bg-white text-green-600 font-bold px-4 py-3 md:px-8 md:py-4 rounded-full hover:bg-gray-100 transition shadow-lg max-w-full text-xs sm:text-sm md:text-base"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
               </svg>
-              investorrelations@ovialand.com
+              <span className="truncate">investorrelations@ovialand.com</span>
             </a>
           </div>
         </div>

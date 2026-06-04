@@ -44,9 +44,9 @@ const Header: React.FC = () => {
 
       <header className="fixed top-0 left-0 right-0 z-40 bg-gray-50/95 backdrop-blur-md border-b border-gray-100 pt-4 pb-2 shadow-sm transition-all duration-300">
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          <div className="flex items-center md:mr-8 self-start -mt-0.5 md:-mt-1">
+          <div className="flex items-center md:mr-8">
             <Link to="/" aria-label="Go to top" className="inline-flex transition-transform duration-200 hover:scale-105 hover:opacity-90" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-11 md:h-14 w-auto scale-125 md:scale-150 origin-left" />
+              <img src="/OLI-HD.png" alt="Ovialand Logo" className="h-11 md:h-14 w-auto" />
             </Link>
           </div>
 
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               
               if (link.name === 'Our Business') {
                 return (
-                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-137.5">
+                  <NavDropdown key={link.name} label={link.name} href={link.href} isActive={active} width="w-[550px]">
                     <div className="container mx-auto px-4 flex gap-6">
                       {BUSINESS_GROUPS.map(group => (
                         <div key={group.title} className="w-1/2 px-3">

@@ -78,7 +78,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
   const models = development.houseModels || [];
 
   const SpecTable: React.FC<{ specs: ModelData['specs'] }> = ({ specs }) => (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8 bg-gray-50 border border-gray-100 rounded-lg p-4 md:p-6 w-full text-xs md:text-xs">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-2 gap-y-4 sm:gap-6 md:gap-8 bg-gray-50 border border-gray-100 rounded-lg p-3 md:p-6 w-full text-xs md:text-xs">
       {[
         { label: 'Lot Area', value: specs.lotArea, unit: 'sqm' },
         { label: 'Floor Area', value: specs.floorArea, unit: 'sqm' },
@@ -100,8 +100,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div className="absolute inset-0 bg-black/50" onClick={onClose} />
         <div
-          className="bg-white max-h-[90vh] overflow-auto rounded-lg shadow-lg relative z-10 p-4 md:p-6 text-center"
-          style={{ width: 'min(95vw, calc(50% + 3in))' }}
+          className="bg-white w-[95vw] md:w-[600px] lg:w-[750px] max-w-4xl max-h-[90vh] overflow-auto rounded-lg shadow-lg relative z-10 p-4 md:p-6 text-center"
         >
           <button onClick={onClose} className="absolute top-3 right-3 w-9 h-9 flex items-center justify-center text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full text-lg touch-manipulation">✕</button>
           {development.name === 'Santevi' && (

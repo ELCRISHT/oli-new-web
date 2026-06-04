@@ -3,7 +3,7 @@ import PageLayout from '../PageLayout';
 
 const GovernancePage: React.FC = () => (
   <PageLayout>
-    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-40 md:pt-28 pb-16">
+    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-12 pb-12">
       <div className="container mx-auto px-6 text-center">
          <h1 className="text-4xl md:text-5xl font-bold text-white">Investor Relations</h1>
       </div>

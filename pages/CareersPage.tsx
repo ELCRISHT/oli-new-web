@@ -40,7 +40,7 @@ const CareersPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-24 md:pt-10 pb-10">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-12 pb-10">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Grow With Us</h1>
         </div>
@@ -58,16 +58,16 @@ const CareersPage: React.FC = () => {
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold text-green-600 mb-10 text-center">Open Positions</h3>
             <div className="flex justify-center mb-10">
-              <div className="inline-flex bg-gray-100 rounded-full p-1">
+              <div className="flex flex-wrap sm:inline-flex bg-gray-100 rounded-2xl sm:rounded-full p-1 gap-1 sm:gap-0 justify-center">
                 {regionNames.map(region => (
                   <button
                     key={region}
                     onClick={() => setActiveRegion(region)}
-                    className={`px-4 sm:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
+                    className={`px-4 sm:px-8 py-3 rounded-xl sm:rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300
                       ${activeRegion === region
                         ? 'bg-green-600 text-white shadow-md scale-105'
                         : 'text-gray-500 hover:text-green-600 hover:scale-105'}
-                      ${region !== regionNames[0] ? 'ml-2' : ''}
+                      ${region !== regionNames[0] ? 'ml-0 sm:ml-2' : ''}
                     `}
                     style={{ transition: 'all 0.3s cubic-bezier(.4,0,.2,1)' }}
                   >

@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section id="home" className="relative h-[calc(100vh-56px)] min-h-150 flex items-center overflow-hidden bg-[#0d1a15]">
+    <section id="home" className="relative h-[calc(100vh-68px)] md:h-[calc(100vh-80px)] min-h-[480px] md:min-h-150 flex items-center overflow-hidden bg-[#0d1a15]">
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}

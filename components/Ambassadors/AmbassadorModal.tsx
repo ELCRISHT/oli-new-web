@@ -33,16 +33,16 @@ const AmbassadorModal: React.FC<AmbassadorModalProps> = ({ ambassador, onClose }
 
                 <div className="mx-auto mt-8 max-w-2xl text-left">
                     {/* Key Stats Bar */}
-                    <div className="grid grid-cols-2 gap-4 mb-8">
-                        <div className="relative overflow-hidden rounded-2xl border border-[#bb9c60]/30 bg-linear-to-br from-[#f5efe4]/5 to-transparent p-5 backdrop-blur-xs">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+                        <div className="relative overflow-hidden rounded-2xl border border-[#bb9c60]/30 bg-linear-to-br from-[#f5efe4]/5 to-transparent p-3 sm:p-5 backdrop-blur-xs">
                             <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#bb9c60]/10 blur-xl" />
                             <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#bb9c60]">PRC License No.</p>
-                            <p className="mt-1.5 text-xl font-medium tracking-tight text-[#f8f3e9]">{ambassador.prcLicenseNo ?? 'N/A'}</p>
+                            <p className="mt-1.5 text-lg sm:text-xl font-medium tracking-tight text-[#f8f3e9]">{ambassador.prcLicenseNo ?? 'N/A'}</p>
                         </div>
-                        <div className="relative overflow-hidden rounded-2xl border border-[#bb9c60]/30 bg-linear-to-br from-[#f5efe4]/5 to-transparent p-5 backdrop-blur-xs">
+                        <div className="relative overflow-hidden rounded-2xl border border-[#bb9c60]/30 bg-linear-to-br from-[#f5efe4]/5 to-transparent p-3 sm:p-5 backdrop-blur-xs">
                             <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#bb9c60]/10 blur-xl" />
                             <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#bb9c60]">Track Record</p>
-                            <p className="mt-1.5 text-xl font-medium tracking-tight text-[#f8f3e9]">{ambassador.totalSales} <span className="text-sm font-light text-[#f5efe4]/60 uppercase tracking-widest ml-1">Sales</span></p>
+                            <p className="mt-1.5 text-lg sm:text-xl font-medium tracking-tight text-[#f8f3e9]">{ambassador.totalSales} <span className="text-xs sm:text-sm font-light text-[#f5efe4]/60 uppercase tracking-widest ml-0.5 sm:ml-1">Sales</span></p>
                         </div>
                     </div>
 
