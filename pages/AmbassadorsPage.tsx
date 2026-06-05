@@ -9,9 +9,9 @@ const AmbassadorsPage: React.FC = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="mx-auto my-4 flex items-center justify-center">
             <img
-              src="/Ambassadors/Gold-Logo.png"
+              src="/Ambassadors/Gold-Logo-Trimmed.png"
               alt="OLI Ambassadors"
-              className="h-24 md:h-36 w-auto object-contain"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain max-w-full"
             />
           </div>
         </div>
