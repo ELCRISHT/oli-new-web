@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Testimonial } from '../../types';
 import { getEmbedUrl } from '../../utils/video';
 
@@ -80,51 +81,36 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
                     </div>
                   </div>
 
-                  {/* Expanded Image Modal */}
-                  {isImageExpanded && (
+                  {/* Expanded Image Modal using React Portal */}
+                  {isImageExpanded && createPortal(
                     <div 
-                      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                      className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 backdrop-blur-md p-4 sm:p-6 cursor-zoom-out"
                       onClick={() => setIsImageExpanded(false)}
                     >
                       <div 
-                        className="relative max-w-2xl max-h-[80vh] rounded-3xl overflow-hidden shadow-2xl border border-[#c9a961]/40"
+                        className="relative max-w-4xl max-h-[90vh] bg-[#1a3a2e] rounded-3xl overflow-hidden shadow-2xl border border-[#c9a961]/40 flex items-center justify-center"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <img 
                           src={testimonial.image} 
                           alt={testimonial.author} 
-                          className="w-full h-full object-contain"
+                          className="max-w-full max-h-[85vh] object-contain select-none rounded-2xl"
                         />
                         {/* Close Button */}
                         <button
                           onClick={() => setIsImageExpanded(false)}
-                          className="absolute top-3 right-3 h-7 w-7 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+                          className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-[#c9a961] hover:text-[#1a3a2e] text-white transition-all duration-300 shadow-lg cursor-pointer"
                           aria-label="Close"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                           </svg>
                         </button>
                       </div>
-                    </div>
+                    </div>,
+                    document.body
                   )}
                 </>
-              ) : testimonial.image ? (
-                <div className="relative group/img">
-                  {/* Decorative Gold Accents matching user reference */}
-                  <div className="absolute -left-2.5 -top-2.5 h-16 w-16 rounded-tl-2xl border-t-4 border-l-4 border-[#c9a961] opacity-40 transition-all duration-300 group-hover/img:-translate-x-1 group-hover/img:-translate-y-1" />
-                  <div className="absolute -right-2.5 -bottom-2.5 h-16 w-16 rounded-br-2xl border-b-4 border-r-4 border-[#c9a961] opacity-40 transition-all duration-300 group-hover/img:translate-x-1 group-hover/img:translate-y-1" />
-                  <div className="absolute inset-0 bg-[#c9a961]/10 rounded-2xl blur-xl opacity-0 group-hover/img:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-2xl border-[3px] border-[#c9a961] bg-[#1a3a2e] shadow-2xl">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.author} 
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover/img:scale-110" 
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </div>
               ) : null}
             </div>
           )}
