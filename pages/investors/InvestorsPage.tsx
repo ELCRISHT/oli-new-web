@@ -24,33 +24,18 @@ const InvestorsPage: React.FC = () => (
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* Card 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-gray-100">
-              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Financial Reports</h3>
               <p className="text-gray-600">Access our latest financial statements and annual reports</p>
             </div>
 
             {/* Card 2 */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-gray-100">
-              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Governance</h3>
               <p className="text-gray-600">Learn about our Board of Directors and corporate governance</p>
             </div>
 
             {/* Card 3 */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-gray-100">
-              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">News & Updates</h3>
               <p className="text-gray-600">Stay informed with the latest company announcements</p>
             </div>
