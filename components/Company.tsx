@@ -7,6 +7,7 @@ import {
   BOARD_OF_DIRECTORS, 
   MANAGEMENT_TEAM 
 } from '../data/company';
+import { ScrollReveal, ScrollContainer } from './shared/ScrollReveal';
 
 const Company: React.FC = () => {
   return (
@@ -14,110 +15,130 @@ const Company: React.FC = () => {
       {/* Story Section */}
       <Section id="company" className="scroll-mt-24">
         <Container>
-          <div className="max-w-6xl mx-auto">
+          <ScrollContainer className="max-w-6xl mx-auto">
             {COMPANY_STORY.map((para, i) => (
-              <p key={i} className="text-gray-600 text-lg font-light leading-relaxed mb-6 text-center">
-                {para}
-              </p>
+              <ScrollReveal key={i}>
+                <p className="text-gray-600 text-lg font-light leading-relaxed mb-6 text-center">
+                  {para}
+                </p>
+              </ScrollReveal>
             ))}
-          </div>
+          </ScrollContainer>
 
           <div className="mt-24">
             {/* Vision & Mission */}
             <div id="mission-vision" className="mb-16 scroll-mt-24">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-                <div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-green-600">
-                  <div className="z-10">
-                    <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Vision</h3>
-                    <p className="text-white text-lg leading-relaxed">
-                      To become the most trusted name in homebuilding for the next generation of Filipino families—where every home represents stability, dignity, and a better future.
-                    </p>
+              <ScrollContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                <ScrollReveal animation="fade-right" className="flex w-full">
+                  <div id="vision" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-green-600 w-full">
+                    <div className="z-10">
+                      <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Vision</h3>
+                      <p className="text-white text-lg leading-relaxed">
+                        To become the most trusted name in homebuilding for the next generation of Filipino families—where every home represents stability, dignity, and a better future.
+                      </p>
+                    </div>
+                    <div className="absolute bottom-6 left-6 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
+                      <svg className="w-20 h-20 text-white" fill="none" viewBox="0 0 64 64" stroke="currentColor">
+                        <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M32 18c8 0 14 6 14 14s-6 14-14 14S18 40 18 32 24 18 32 18z" />
+                        <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M44 32c0 6.627-5.373 12-12 12S20 38.627 20 32 25.373 20 32 20s12 5.373 12 12z" />
+                      </svg>
+                    </div>
                   </div>
-                  <div className="absolute bottom-6 left-6 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
-                    <svg className="w-20 h-20 text-white" fill="none" viewBox="0 0 64 64" stroke="currentColor">
-                      <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M32 18c8 0 14 6 14 14s-6 14-14 14S18 40 18 32 24 18 32 18z" />
-                      <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M44 32c0 6.627-5.373 12-12 12S20 38.627 20 32 25.373 20 32 20s12 5.373 12 12z" />
-                    </svg>
-                  </div>
-                </div>
+                </ScrollReveal>
 
-                <div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-green-600">
-                  <div className="z-10">
-                    <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Mission</h3>
-                    <p className="text-white text-lg leading-relaxed">
-                      To bring <strong>Premier Family Living&reg;</strong> to life by creating homes and communities that families can grow into&mdash;guided by quality, integrity, and genuine care for every homeowner we serve.
-                    </p>
+                <ScrollReveal animation="fade-left" className="flex w-full">
+                  <div id="mission" className="relative overflow-hidden rounded-3xl min-h-64 flex items-center p-6 md:p-10 group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-green-600 w-full">
+                    <div className="z-10">
+                      <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide mb-4">Our Mission</h3>
+                      <p className="text-white text-lg leading-relaxed">
+                        To bring <strong>Premier Family Living&reg;</strong> to life by creating homes and communities that families can grow into&mdash;guided by quality, integrity, and genuine care for every homeowner we serve.
+                      </p>
+                    </div>
+                    <div className="absolute bottom-6 right-6 opacity-20 text-white group-hover:opacity-30 transition-opacity duration-300">
+                      <svg className="w-14 h-14" fill="none" viewBox="0 0 64 64" stroke="currentColor">
+                        <circle cx="32" cy="32" r="14" strokeWidth="2" />
+                        <path d="M44 20L36 28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
                   </div>
-                  <div className="absolute bottom-6 right-6 opacity-20 text-white group-hover:opacity-30 transition-opacity duration-300">
-                    <svg className="w-14 h-14" fill="none" viewBox="0 0 64 64" stroke="currentColor">
-                      <circle cx="32" cy="32" r="14" strokeWidth="2" />
-                      <path d="M44 20L36 28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+                </ScrollReveal>
+              </ScrollContainer>
             </div>
 
             {/* Core Values */}
             <div id="values" className="rounded-3xl overflow-hidden bg-white scroll-mt-24 py-12 md:py-20">
-              <h3 className="text-2xl md:text-4xl font-bold text-green-600 text-center uppercase tracking-widest md:tracking-[0.25em] mb-10 md:mb-16">
-                Our Core Values
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 w-full max-w-6xl mx-auto px-2 md:px-4 justify-items-center">
+              <ScrollReveal>
+                <h3 className="text-2xl md:text-4xl font-bold text-green-600 text-center uppercase tracking-widest md:tracking-[0.25em] mb-10 md:mb-16">
+                  Our Core Values
+                </h3>
+              </ScrollReveal>
+              <ScrollContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 w-full max-w-6xl mx-auto px-2 md:px-4 justify-items-center">
                 {CORE_VALUES.map((value) => (
-                  <div key={value.label} className="flex flex-col items-center gap-4 group bg-gray-50/50 p-6 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-gray-100">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 p-1 bg-green-600 shadow-md">
-                      {getValueIcon(value.iconType)}
+                  <ScrollReveal key={value.label} className="w-full flex">
+                    <div className="flex flex-col items-center gap-4 group bg-gray-50/50 p-6 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-gray-100 w-full">
+                      <div className="w-20 h-20 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 p-1 bg-green-600 shadow-md">
+                        {getValueIcon(value.iconType)}
+                      </div>
+                      <div className="flex flex-col items-center text-center">
+                        <span className="text-green-600 text-sm md:text-base font-bold uppercase tracking-[0.12em] mb-3">{value.label}</span>
+                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">{value.description}</p>
+                      </div>
                     </div>
-                    <div className="flex flex-col items-center text-center">
-                      <span className="text-green-600 text-sm md:text-base font-bold uppercase tracking-[0.12em] mb-3">{value.label}</span>
-                      <p className="text-gray-600 text-sm md:text-base leading-relaxed">{value.description}</p>
-                    </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
-              </div>
+              </ScrollContainer>
             </div>
           </div>
 
           {/* Leadership */}
           <div id="leadership" className="mt-16 md:mt-24 scroll-mt-24">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-green-600">Leadership</h2>
-            </div>
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold text-green-600">Leadership</h2>
+              </div>
+            </ScrollReveal>
             
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Board of Directors</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+              <ScrollReveal>
+                <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Board of Directors</h3>
+              </ScrollReveal>
+              <ScrollContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
                 {BOARD_OF_DIRECTORS.map((person) => (
-                  <div key={person.name} className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-                    <div className="aspect-4/5 bg-gray-100 overflow-hidden">
-                      <img
-                        src={person.image}
-                        alt={person.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      />
+                  <ScrollReveal key={person.name} className="w-full">
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-shadow duration-300 h-full">
+                      <div className="aspect-4/5 bg-gray-100 overflow-hidden">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <h4 className="text-base font-bold text-gray-800 leading-snug">{person.name}</h4>
+                        <p className="text-green-600 font-medium text-sm mt-1">{person.title}</p>
+                      </div>
                     </div>
-                    <div className="p-5">
-                      <h4 className="text-base font-bold text-gray-800 leading-snug">{person.name}</h4>
-                      <p className="text-green-600 font-medium text-sm mt-1">{person.title}</p>
-                    </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
-              </div>
+              </ScrollContainer>
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Management Team</h3>
-              <div className="bg-gray-50 rounded-3xl p-8 md:p-10">
+              <ScrollReveal>
+                <h3 className="text-2xl font-bold text-gray-700 mb-8 border-l-4 border-green-600 pl-4">Management Team</h3>
+              </ScrollReveal>
+              <ScrollContainer className="bg-gray-50 rounded-3xl p-8 md:p-10">
                 <ul className="list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-12">
                   {MANAGEMENT_TEAM.map((person) => (
-                    <li key={person.name} className="flex flex-col">
-                      <strong className="text-gray-800 text-base">{person.name}</strong>
-                      <span className="text-gray-600 text-sm">{person.title}</span>
-                    </li>
+                    <ScrollReveal key={person.name} className="flex flex-col">
+                      <li className="flex flex-col">
+                        <strong className="text-gray-800 text-base">{person.name}</strong>
+                        <span className="text-gray-600 text-sm">{person.title}</span>
+                      </li>
+                    </ScrollReveal>
                   ))}
                 </ul>
-              </div>
+              </ScrollContainer>
             </div>
           </div>
         </Container>

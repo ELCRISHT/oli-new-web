@@ -7,6 +7,7 @@ import News from '../components/News';
 import TrustedStats from '../components/TrustedStats';
 import AwardsList from '../components/AwardsList';
 import { southLuzon, centralLuzon, PILLARS } from '../constants';
+import { ScrollReveal, ScrollContainer } from '../components/shared/ScrollReveal';
 
 const HomePage: React.FC = () => {
   const [activeRegion, setActiveRegion] = useState<'south' | 'central'>('south');
@@ -17,22 +18,23 @@ const HomePage: React.FC = () => {
         <Hero />
         <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
         <Houseasy showImage={false} />
+        
         <section id="pillars" className="py-16 md:py-1 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
+            <ScrollReveal className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
                 3 Pillars of Premier Family Living
               </h2>
               <p className="text-gray-500 text-base md:text-lg font-light">
                 Ovialand is committed to delivering homes and communities that redefine quality living for every Filipino family.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-0">
+            <ScrollContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-0">
               {PILLARS.map((pillar) => (
-                <div
+                <ScrollReveal
                   key={pillar.title}
-                  className="group flex flex-col items-center text-center bg-white rounded-3xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  className="group flex flex-col items-center text-center bg-white rounded-3xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full"
                 >
                   <div className="w-full overflow-hidden">
                     <img
@@ -45,23 +47,22 @@ const HomePage: React.FC = () => {
                     <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2 transition-colors duration-300 group-hover:text-green-700">{pillar.title}</h3>
                     <p className="text-gray-600 text-sm md:text-base font-light transition-colors duration-300 group-hover:text-gray-700">{pillar.description}</p>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
-            </div>
+            </ScrollContainer>
           </div>
         </section>
 
-
         <section id="communities" className="py-8 md:py-20 bg-white">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-1 md:mb-1">
+            <ScrollReveal className="text-center max-w-2xl mx-auto mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
               <p className="text-gray-500 text-base md:text-lg font-light">
                 Explore our master-planned communities across South Luzon and Central Luzon.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="flex justify-center mb-8 md:mb-8">
+            <ScrollReveal className="flex justify-center mb-8">
               <div className="flex flex-wrap sm:inline-flex bg-gray-100 rounded-2xl sm:rounded-full p-1 gap-1 sm:gap-0 justify-center">
                 {['south', 'central'].map(region => (
                   <button
@@ -79,35 +80,39 @@ const HomePage: React.FC = () => {
                   </button>
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
 
             <div className="relative min-h-100">
               {activeRegion === 'south' && (
-                <div
+                <ScrollContainer
                   key="south"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"
                 >
                   {southLuzon.map(dev => (
-                    <DevelopmentCard key={dev.id} development={dev} />
+                    <ScrollReveal key={dev.id} className="w-full flex">
+                      <DevelopmentCard development={dev} />
+                    </ScrollReveal>
                   ))}
-                </div>
+                </ScrollContainer>
               )}
 
               {activeRegion === 'central' && (
-                <div
+                <ScrollContainer
                   key="central"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 animate-fadeIn"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"
                 >
                   {centralLuzon.length > 0 ? (
                     centralLuzon.map(dev => (
-                      <DevelopmentCard key={dev.id} development={dev} />
+                      <ScrollReveal key={dev.id} className="w-full flex">
+                        <DevelopmentCard development={dev} />
+                      </ScrollReveal>
                     ))
                   ) : (
-                    <div className="col-span-4 text-center py-20 text-gray-400">
+                    <div className="col-span-4 text-center py-20 text-gray-400 w-full">
                       <p className="text-lg font-light">More communities coming soon in Central Luzon.</p>
                     </div>
                   )}
-                </div>
+                </ScrollContainer>
               )}
             </div>
           </div>
