@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           <source src="https://olione.ovialand.com/assets/landing.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/40 to-black/50" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/20 to-black/30" />
       </div> 
       <div className="container mx-auto px-4 md:px-6 relative z-10 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-white text-center">
