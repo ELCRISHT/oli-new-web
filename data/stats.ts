@@ -9,14 +9,14 @@ export const TRUSTED_STATS = [
   },
   {
     label: 'Houses Built',
-    target: 3500,
+    target: 4041,
     suffix: '+',
     description: 'Solid concrete homes delivered',
     iconType: 'house'
   },
   {
     label: 'Families Served',
-    target: 3416,
+    target: 4041,
     suffix: '',
     description: 'Happy families in their dream homes',
     iconType: 'family'
