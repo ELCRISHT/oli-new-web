@@ -145,6 +145,22 @@ export const MODEL_DATA_MAP: Record<string, ModelData> = {
     description: 'The Quad Unit features a smart and efficient layout ideal for modern family living. With limited units in one structure, it provides a comfortable, private, and easy-to-maintain home for growing families.',
     specs: { lotArea: '60', floorArea: '50.70', bedroom: '2', toiletBath: '2', carport: '1' },
   },
+  // Amirra
+  AmirraEstate: {
+    label: 'Estate',
+    description: 'The Amirra Estate is a single-attached unit thoughtfully crafted for family milestones and unforgettable moments.',
+    specs: { lotArea: '80', floorArea: '60', bedroom: '3', toiletBath: '2', carport: '1' },
+  },
+  AmirraMansion: {
+    label: 'Mansion',
+    description: "The Amirra Mansion offers a distinct duplex layout featuring Ovialand's signature back-to-back concept, designed to bring exceptional value and comfort to every Filipino household.",
+    specs: { lotArea: '80', floorArea: '55.30', bedroom: '3', toiletBath: '2', carport: '1' },
+  },
+  AmirraEnclave: {
+    label: 'Enclave',
+    description: 'The Amirra Enclave is a quad unit that combines a clever, space-efficient layout with a low-density building design, giving growing families a private, easy-to-maintain, and comfortable living environment.',
+    specs: { lotArea: '60', floorArea: '56.40', bedroom: '3', toiletBath: '2', carport: '1' },
+  },
 };
 
 export const DEVELOPMENTS: Development[] = [
@@ -252,13 +268,25 @@ export const DEVELOPMENTS: Development[] = [
     id: '9',
     name: 'Anara',
     location: 'Brgy. San Roque, Baliwag City, Bulacan',
-    imageUrl: '/Anara.png',
+    imageUrl: 'Anara.jpg',
     mapUrl: 'https://maps.app.goo.gl/TJtXWQvv8zzwPync8',
     status: 'Opening Soon',
     description: 'Anara is a 4.2-hectare residential community in Baliuag, Bulacan designed for modern tropical living. It brings Ovialand signature Premier Family Living experience, featuring premium finishes, efficient precast construction, and the reliable HousEasy service commitment for a smooth and reassuring homeownership journey.',
     houseModels: ['AnaraEstate', 'Quad'],
     houseModelImages: ['/Anara/Estate.png', '/Anara/Quad.png'],
     nearbyEstablishments: ['Plaza de Baliwag', 'High School', 'Community Church']
+  },
+  {
+    id: '10',
+    name: 'Amirra',
+    location: 'Sta. Maria, Bulacan',
+    imageUrl: '/Amirra/AMIRRA OLI PROFILE.jpg',
+    mapUrl: 'https://maps.app.goo.gl/CCwBdLApw4CfRFbM9',
+    status: 'Opening Soon',
+    description: "Amirra is Ovialand's latest community, soon to rise in Sta. Maria, Bulacan — just 30 minutes away from Metro Manila. For families who have long wanted a real house and lot close to the city, this is the moment that feels different. Ovialand brings its signature approach to community planning: well-planned homes, thriving open spaces where neighbors are not strangers. Here, suburban living goes beyond location: it is a thoughtfully designed environment where children can play, neighbors become friends, and everyday life unfolds comfortably. Backed by Ovialand's HousEasy promise, your home is delivered with clarity, quality, and care, making the journey to homeownership as smooth and reassuring as the life that awaits you here.",
+    houseModels: ['AmirraEstate', 'AmirraMansion', 'AmirraEnclave'],
+    houseModelImages: ['/Amirra/AMIRRA ESTATE.jpg', '/Amirra/AMIRRA MANSION.jpg', '/Amirra/AMIRRA ENCLAVE.jpg'],
+    nearbyEstablishments: ['Polytechnic University of the Philippines', 'ACE - Santa Maria Medical Center Inc.', 'Sta. Maria Town Center', 'Nuestra Señora del Carmel Parish Church - Pulong Buhangin']
   }
 ];
 

@@ -4,6 +4,7 @@ import Container from './base/Container';
 import StatCard from './shared/StatCard';
 import CSRSection from './CSR/CSRSection';
 import { CSR_SECTIONS, CSR_STATS } from '../data/csr';
+import { ScrollReveal, ScrollContainer } from './shared/ScrollReveal';
 
 const CSR: React.FC = () => {
   return (
@@ -11,22 +12,23 @@ const CSR: React.FC = () => {
       {/* Stats Section */}
       <Section bg="gray" className="py-10 md:py-12">
         <Container>
-          <div className="text-center mb-10 max-w-3xl mx-auto">
+          <ScrollReveal className="text-center mb-10 max-w-3xl mx-auto">
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
               We build more than just houses; we nurture communities, empower the youth, and preserve the environment for a sustainable future.
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          </ScrollReveal>
+          <ScrollContainer className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {CSR_STATS.map((stat, i) => (
-              <StatCard 
-                key={i} 
-                stat={{
-                  ...stat,
-                  icon: getStatIcon(stat.label)
-                }} 
-              />
+              <ScrollReveal key={i}>
+                <StatCard
+                  stat={{
+                    ...stat,
+                    icon: getStatIcon(stat.label)
+                  }}
+                />
+              </ScrollReveal>
             ))}
-          </div>
+          </ScrollContainer>
         </Container>
       </Section>
 
@@ -38,10 +40,12 @@ const CSR: React.FC = () => {
           className="py-10 md:py-14"
         >
           <Container>
-            <CSRSection 
-              {...section} 
-              reverse={idx % 2 !== 0} 
-            />
+            <ScrollReveal>
+              <CSRSection
+                {...section}
+                reverse={idx % 2 !== 0}
+              />
+            </ScrollReveal>
           </Container>
         </Section>
       ))}

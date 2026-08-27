@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { DEVELOPMENTS } from '../constants';
+import { DEVELOPMENTS } from '../data/developments';
 
 interface SearchResult {
   label: string;

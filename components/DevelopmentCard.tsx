@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Development, ModelData } from '../types';
-import { MODEL_DATA_MAP } from '../constants';
+import { MODEL_DATA_MAP } from '../data/developments';
 
 interface Props {
   development: Development;
@@ -110,7 +110,7 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
           )}
           {development.name === 'Savana South' && (
             <div className="flex justify-center mb-3">
-              <img src="/SVN-1.png" alt="Savana South Logo" className="h-16 object-contain" />
+              <img src="/SavanaSouth-Logo.png" alt="Savana South Logo" className="h-16 object-contain" />
             </div>
           )}
           {development.name === 'Savana' && (
@@ -120,30 +120,35 @@ const Modal: React.FC<{ development: Development; onClose: () => void }> = ({ de
           )}
           {development.name === 'Caliya' && (
             <div className="flex justify-center mb-3">
-              <img src="/CLY-1.png" alt="Caliya Logo" className="h-14 object-contain" />
+              <img src="/Caliya-Logo.png" alt="Caliya Logo" className="h-14 object-contain" />
             </div>
           )}
           {development.name === 'Anara' && (
             <div className="flex justify-center mb-3">
-              <img src="/ANR-1.png" alt="Anara Logo" className="h-24 object-contain" />
+              <img src="/Anara-Logo.png" alt="Anara Logo" className="h-24 object-contain" />
             </div>
           )}
           {development.name === 'Sannera' && (
             <div className="flex justify-center mb-3">
-              <img src="/SNR-1.webp" alt="Sannera Logo" className="h-24 object-contain" />
+              <img src="/Sannera-Logo.webp" alt="Sannera Logo" className="h-24 object-contain" />
             </div>
           )}
           {development.name === 'Seriya' && (
             <div className="flex justify-center mb-3">
-              <img src="/SRY-1.png" alt="Seriya Logo" className="h-24 object-contain" />
+              <img src="/Seriya-Logo.png" alt="Seriya Logo" className="h-24 object-contain" />
             </div>
           )}
           {development.name === 'Sentro' && (
             <div className="flex justify-center mb-3">
-              <img src="/STR-1.png" alt="Sentro Logo" className="h-24 object-contain" />
+              <img src="/Sentro-Logo.png" alt="Sentro Logo" className="h-24 object-contain" />
             </div>
           )}
-          {development.name !== 'Santevi' && development.name !== 'Savana South' && development.name !== 'Savana' && development.name !== 'Caliya' && development.name !== 'Anara' && development.name !== 'Sannera' && development.name !== 'Seriya' && development.name !== 'Sentro' && (
+          {development.name === 'Amirra' && (
+            <div className="flex justify-center mb-3">
+              <img src="/Amirra/Amirra Logo.png" alt="Amirra Logo" className="h-12 object-contain" />
+            </div>
+          )}
+          {development.name !== 'Santevi' && development.name !== 'Savana South' && development.name !== 'Savana' && development.name !== 'Caliya' && development.name !== 'Anara' && development.name !== 'Sannera' && development.name !== 'Seriya' && development.name !== 'Sentro' && development.name !== 'Amirra' && (
             <h2 className="text-xl md:text-2xl font-bold mb-2 pr-8">{development.name}</h2>
           )}
           {development.description && <p className="text-gray-600 mb-4">{development.description}</p>}

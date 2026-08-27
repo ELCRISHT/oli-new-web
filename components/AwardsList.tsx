@@ -1,17 +1,17 @@
 import React from 'react';
-import { AWARDS } from '../constants';
+import { AWARDS } from '../data/awards';
 
 const AwardsList: React.FC = () => {
   return (
-    <section id="awards" className="pt-8 md:pt-1 pb-8 md:pb-15 bg-white scroll-mt-24">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="awards" className="py-8 md:py-12 bg-white scroll-mt-24">
+      <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Awards and Recognition</h2>
           <p className="text-gray-500 text-base md:text-lg font-light">
             Celebrating industry awards reflect our commitment to excellence.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
           {AWARDS.map((award, i) => (
             <div
               key={i}

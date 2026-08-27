@@ -1,26 +1,27 @@
 import React from 'react';
 import PageLayout from '../PageLayout';
 import Houseasy from '../../components/Houseasy';
+import { ScrollReveal, ScrollContainer } from '../../components/shared/ScrollReveal';
 
 const HouseasyPage: React.FC = () => (
   <PageLayout>
     <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-12 pb-12">
       <div className="container mx-auto px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white">Homebuying Made Easy</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Homebuying Made Easy</h1>
 
       </div>
     </section>
 
     <Houseasy showButton={false} />
 
-    <section id="journey" className="py-24 bg-white">
+    <section id="journey" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Homebuying Journey</h2>
           <p className="text-gray-500 text-lg font-light">
             We are committed to offering you the Premier Home of your dreams. From securing your reservation to handing you the keys, experience how easy it is to achieve homeownership with Ovialand.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Timeline */}
         <div className="py-4">
@@ -30,7 +31,7 @@ const HouseasyPage: React.FC = () => (
               {/* Horizontal connecting line */}
               <div className="absolute top-8 left-[calc(100%/12)] right-[calc(100%/12)] h-0.5 bg-gray-300 z-0" />
               
-              <div className="flex items-start justify-between">
+              <ScrollContainer className="flex items-start justify-between">
                 {[
                   { step: '01', title: 'Book a Site Tripping', desc: 'Experience the community firsthand. Walk through our model units and see why Ovialand is the perfect place to start your future.' },
                   { step: '02', title: 'Reservation', desc: 'Secure your chosen unit today. Pay the reservation fee and officially claim your spot in the community.' },
@@ -39,7 +40,7 @@ const HouseasyPage: React.FC = () => (
                   { step: '05', title: 'Loan Take-Out', desc: 'Your loan is approved and released. Bringing you one step closer to homeownership.' },
                   { step: '06', title: 'House Turnover', desc: 'Celebrate as we officially turn over your brandnew Ovialand home.' },
                 ].map((item) => (
-                  <div key={item.step} className="group relative z-10 flex flex-col items-center flex-1 cursor-default">
+                  <ScrollReveal key={item.step} className="group relative z-10 flex flex-col items-center flex-1 cursor-default">
                     <div className="w-16 h-16 bg-green-700 rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-green-400 group-hover:scale-110 group-hover:shadow-xl">
                       <span className="text-white font-bold text-xl">{item.step}</span>
                     </div>
@@ -49,13 +50,13 @@ const HouseasyPage: React.FC = () => (
                       <h3 className="text-sm font-bold text-gray-800 leading-snug transition-colors duration-300 group-hover:text-green-600">{item.title}</h3>
                       <p className="text-gray-500 text-xs font-light leading-relaxed mt-2">{item.desc}</p>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
-              </div>
+              </ScrollContainer>
             </div>
 
             {/* Mobile Timeline */}
-            <div className="md:hidden relative border-l-2 border-gray-200 ml-8 pl-8 space-y-12 py-4">
+            <ScrollContainer className="md:hidden relative border-l-2 border-gray-200 ml-8 pl-8 space-y-12 py-4">
               {[
                 { step: '01', title: 'Book a Site Tripping', desc: 'Experience the community firsthand. Walk through our model units and see why Ovialand is the perfect place to start your future.' },
                 { step: '02', title: 'Reservation', desc: 'Secure your chosen unit today. Pay the reservation fee and officially claim your spot in the community.' },
@@ -64,24 +65,24 @@ const HouseasyPage: React.FC = () => (
                 { step: '05', title: 'Loan Take-Out', desc: 'Your loan is approved and released. Bringing you one step closer to homeownership.' },
                 { step: '06', title: 'House Turnover', desc: 'Celebrate as we officially turn over your brandnew Ovialand home.' },
               ].map((item) => (
-                <div key={item.step} className="group relative cursor-default">
+                <ScrollReveal key={item.step} animation="fade-right" className="group relative cursor-default">
                   {/* Step circle on the left line */}
                   <div className="absolute -left-[57px] top-0 w-12 h-12 bg-green-700 rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-green-400 group-hover:scale-110">
                     <span className="text-white font-bold text-sm">{item.step}</span>
                   </div>
-                  
+
                   {/* Step Content */}
                   <div>
                     <h3 className="text-base font-bold text-gray-800 leading-snug transition-colors duration-300 group-hover:text-green-600">{item.title}</h3>
                     <p className="text-gray-500 text-sm font-light leading-relaxed mt-1.5">{item.desc}</p>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
-            </div>
+            </ScrollContainer>
           </div>
         </div>
 
-        <div className="text-center mt-16">
+        <ScrollReveal className="text-center mt-16">
           <a
             href="/our-ambassadors"
             target="_blank"
@@ -90,7 +91,7 @@ const HouseasyPage: React.FC = () => (
           >
             Inquire now and schedule a viewing
           </a>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   </PageLayout>

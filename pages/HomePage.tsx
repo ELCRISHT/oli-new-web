@@ -6,7 +6,8 @@ import DevelopmentCard from '../components/DevelopmentCard';
 import News from '../components/News';
 import TrustedStats from '../components/TrustedStats';
 import AwardsList from '../components/AwardsList';
-import { southLuzon, centralLuzon, PILLARS } from '../constants';
+import { southLuzon, centralLuzon } from '../data/developments';
+import { PILLARS } from '../data/ui';
 import { ScrollReveal, ScrollContainer } from '../components/shared/ScrollReveal';
 
 const HomePage: React.FC = () => {
@@ -19,8 +20,8 @@ const HomePage: React.FC = () => {
         <div className="h-px bg-linear-to-r from-transparent via-gray-200 to-transparent"></div>
         <Houseasy showImage={false} />
         
-        <section id="pillars" className="py-16 md:py-1 bg-white">
-          <div className="container mx-auto px-4">
+        <section id="pillars" className="py-8 md:py-12 bg-white">
+          <div className="container mx-auto px-6">
             <ScrollReveal className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-4">
                 3 Pillars of Premier Family Living
@@ -53,8 +54,8 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        <section id="communities" className="py-8 md:py-20 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
+        <section id="communities" className="py-8 md:py-12 bg-white">
+          <div className="container mx-auto px-6">
             <ScrollReveal className="text-center max-w-2xl mx-auto mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">Our Communities</h2>
               <p className="text-gray-500 text-base md:text-lg font-light">
@@ -86,7 +87,7 @@ const HomePage: React.FC = () => {
               {activeRegion === 'south' && (
                 <ScrollContainer
                   key="south"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
                 >
                   {southLuzon.map(dev => (
                     <ScrollReveal key={dev.id} className="w-full flex">
@@ -99,7 +100,7 @@ const HomePage: React.FC = () => {
               {activeRegion === 'central' && (
                 <ScrollContainer
                   key="central"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
                 >
                   {centralLuzon.length > 0 ? (
                     centralLuzon.map(dev => (

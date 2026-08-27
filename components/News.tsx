@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ADDITIONAL_NEWS from '../data/news.json';
+import { ScrollReveal, ScrollContainer } from './shared/ScrollReveal';
 
 const NEWS_ITEMS = [
   {
@@ -71,16 +72,16 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
   const years: number[] = [];
   for (let y = currentYear; y >= 2024; y--) years.push(y);
   return (
-    <section id="news" className="py-7 md:py-1 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="news" className="py-8 md:py-12 bg-white">
+      <div className="container mx-auto px-6">
 
         {!isNewsPage && (
-          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
+          <ScrollReveal className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4">News & Updates</h2>
             <p className="text-gray-500 text-base md:text-lg font-light">
               Stay up-to-date with our latest projects, milestones, and events.
             </p>
-          </div>
+          </ScrollReveal>
         )}
 
         <div className="flex justify-end mb-6 relative">
@@ -122,9 +123,9 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
+        <ScrollContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {visibleTop.map((item, i) => (
-            <article
+            <ScrollReveal
               key={i}
               className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-gray-100"
             >
@@ -169,14 +170,14 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
                   )}
                 </div>
               </div>
-            </article>
+            </ScrollReveal>
           ))}
-        </div>
+        </ScrollContainer>
         {expanded && !filterYear && (
           <div className="mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
+            <ScrollContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {remaining.map((item, i) => (
-                <article
+                <ScrollReveal
                   key={`more-${i}`}
                   className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-gray-100"
                 >
@@ -206,9 +207,9 @@ const News: React.FC<{ moreNews?: any[]; filterYear?: string | null }> = ({ more
                       )}
                     </div>
                   </div>
-                </article>
+                </ScrollReveal>
               ))}
-            </div>
+            </ScrollContainer>
           </div>
         )}
 

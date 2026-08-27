@@ -270,16 +270,16 @@ const SocialsPage: React.FC = () => {
 
   return (
     <PageLayout>
-      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-12 md:pt-10 pb-10">
+      <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-12 pb-10">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">Socials</h1>
-          <p className="text-white/90 mt-4">Join our growing community online. Follow us for the latest news, project milestones, and life at Ovialand straight from our feeds.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Socials</h1>
+          <p className="text-white/90">Join our growing community online. Follow us for the latest news, project milestones, and life at Ovialand straight from our feeds.</p>
         </div>
       </section>
 
-      <section className="py-12 bg-linear-to-b from-[#f7f8fa] to-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+      <section className="py-12 md:py-16 bg-linear-to-b from-[#f7f8fa] to-white">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {visiblePosts.map((post) => {
               const meta = getPlatformMeta(post.platform);
               const embedUrl = getEmbedUrl(post.platform, post.postUrl);

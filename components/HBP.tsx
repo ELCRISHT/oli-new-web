@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollReveal, ScrollContainer } from './shared/ScrollReveal';
 
 const FEATURES = [
   {
@@ -98,12 +99,12 @@ const HBP: React.FC = () => {
       {/* What is OLI Home */}
       <section className="py-10 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-6">What is OLIHome?</h2>
             <p className="text-gray-600 text-lg font-light leading-relaxed">
               OLIHome is Ovialand's dedicated digital portal built exclusively for homebuyers. It centralizes every step of your homebuying journey — from document submission and payment tracking to direct communication with your Account Officer — into one seamless, secure, and easy-to-use platform.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -112,15 +113,15 @@ const HBP: React.FC = () => {
       {/* Features */}
       <section className="py-10 bg-gray-50 to-transparent">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Portal Features</h2>
             <p className="text-gray-500 text-lg font-light">
               Everything you need to manage your homeownership journey — right at your fingertips.
             </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          </ScrollReveal>
+          <ScrollContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {FEATURES.map((feature) => (
-              <div
+              <ScrollReveal
                 key={feature.title}
                 className="group bg-white rounded-2xl shadow-md p-8 border border-gray-100 transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-green-200"
               >
@@ -129,16 +130,16 @@ const HBP: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-green-600 transition-colors duration-300">{feature.title}</h3>
                 <p className="text-gray-500 text-sm font-light leading-relaxed">{feature.description}</p>
-              </div>
+              </ScrollReveal>
             ))}
-          </div>
+          </ScrollContainer>
         </div>
       </section>
 
       <div className="h-px bg-linear-to-r from-transparent via-white to-transparent" />
       {/* CTA */}
       <section className="py-10 bg-linear-to-r from-white to-white">
-        <div className="container mx-auto px-6 text-center">
+        <ScrollReveal className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">Ready to Access Your Portal?</h2>
           <p className="text-green-700 text-lg font-light max-w-xl mx-auto mb-8">
             Join thousands of Ovialand homebuyers who are already managing their journey online.
@@ -151,7 +152,7 @@ const HBP: React.FC = () => {
           >
             Explore OLIHome Now
           </a>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

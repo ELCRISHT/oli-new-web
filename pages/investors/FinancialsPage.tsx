@@ -1,29 +1,30 @@
 import React from 'react';
 import PageLayout from '../PageLayout';
+import { ScrollReveal, ScrollContainer } from '../../components/shared/ScrollReveal';
 
 const FinancialsPage: React.FC = () => (
   <PageLayout>
-    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-24 md:pt-28 pb-16">
+    <section className="bg-linear-to-r from-green-700 to-emerald-600 pt-10 md:pt-12 pb-10">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white">Financials</h1>
       </div>
     </section>
 
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">Financial Performance</h2>
             <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
               Access Ovialand's annual reports, quarterly results, and financial statements.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="mb-16">
             <h3 className="text-2xl font-bold text-green-600 mb-8">Annual Reports</h3>
-            <div className="space-y-4">
+            <ScrollContainer className="space-y-4">
               {['2024 Annual Report', '2025 Annual Report', '2026 Annual Report'].map((report) => (
-                <div key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors group">
+                <ScrollReveal key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors group">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                       <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,16 +36,16 @@ const FinancialsPage: React.FC = () => (
                   <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
                     View
                   </button>
-                </div>
+                </ScrollReveal>
               ))}
-            </div>
+            </ScrollContainer>
           </div>
 
           <div>
             <h3 className="text-2xl font-bold text-green-600 mb-8">Quarterly Results</h3>
-            <div className="space-y-4">
+            <ScrollContainer className="space-y-4">
               {['2024 Quarterly Results', '2025 Quarterly Results', '2026 Quarterly Results'].map((report) => (
-                <div key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors">
+                <ScrollReveal key={report} className="flex items-center justify-between bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                       <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,17 +57,17 @@ const FinancialsPage: React.FC = () => (
                   <button className="text-green-600 font-bold text-sm uppercase tracking-widest hover:text-green-800 transition-colors">
                     View
                   </button>
-                </div>
+                </ScrollReveal>
               ))}
-            </div>
+            </ScrollContainer>
           </div>
 
-          <div className="mt-16 text-center bg-green-50 rounded-2xl p-10">
+          <ScrollReveal className="mt-16 text-center bg-green-50 rounded-2xl p-10">
             <p className="text-gray-500 font-light mb-4">Need access to specific financial documents?</p>
             <a href="/contact" className="inline-block px-6 py-3 bg-green-600 text-white font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-green-700 transition-all duration-300">
               Contact Investor Relations
             </a>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

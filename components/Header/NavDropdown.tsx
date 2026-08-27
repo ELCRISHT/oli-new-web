@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useDropdown } from '../../hooks/useDropdown';
 
 interface NavDropdownProps {
@@ -38,11 +39,21 @@ const NavDropdown: React.FC<NavDropdownProps> = ({
         </svg>
       </Link>
       
-      {isOpen && (
-        <div className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 ${width} bg-white rounded-xl shadow-2xl py-4 border border-gray-100 z-50`}>
-          {children}
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 ${width} z-50`}>
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-white rounded-xl shadow-2xl py-4 border border-gray-100"
+            >
+              {children}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

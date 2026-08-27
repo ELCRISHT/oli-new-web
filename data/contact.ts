@@ -25,7 +25,7 @@ export const OFFICE_INFO = {
   address: '2701 Parkway Corporate Center, Filinvest City, Alabang, Muntinlupa City, Metro Manila',
   phone: '02 8403 6864',
   phoneRaw: '0284036864',
-  hours: '08:00am to 05:00pm',
+  hours: '08:00 AM to 05:00 PM',
   emails: [
     { label: 'General Inquiry', email: 'info@ovialand.com' },
     { label: 'Investor Relations', email: 'investorrelations@ovialand.com' },

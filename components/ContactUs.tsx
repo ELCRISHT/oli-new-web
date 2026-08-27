@@ -3,6 +3,7 @@ import { apiServices } from '../api/services';
 import { sendContactEmails } from '../api/emailService';
 import { useForm } from '../hooks/useForm';
 import { CONTACT_TOPICS, TOPIC_RECIPIENTS, OFFICE_INFO } from '../data/contact';
+import { ScrollReveal } from './shared/ScrollReveal';
 import './ContactUs.css';
 
 interface ContactFormData {
@@ -70,7 +71,7 @@ const ContactUs: React.FC = () => {
     <section id="contact-us" className="contact-us-section">
       <div className="contact-us-container">
         <div className="contact-us-content">
-          <div className="contact-form-wrapper">
+          <ScrollReveal animation="fade-right" className="contact-form-wrapper">
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="topic">Topic <span className="required">*</span></label>
@@ -190,9 +191,9 @@ const ContactUs: React.FC = () => {
                 {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
               </button>
             </form>
-          </div>
+          </ScrollReveal>
 
-          <div className="contact-info-wrapper">
+          <ScrollReveal animation="fade-left" className="contact-info-wrapper">
             <div className="contact-info-card">
               <h3>Contact Information</h3>
 
@@ -232,7 +233,7 @@ const ContactUs: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

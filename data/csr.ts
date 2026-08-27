@@ -31,13 +31,13 @@ export const CSR_SECTIONS: CSRSection[] = [
     description: 'We build responsibly. In every project we develop, we plant trees to promote environmental balance, enhance green spaces, and nurture healthier communities for generations to come.',
     items: [], // Items weren't in the original text but added to the type, leaving empty to preserve exact content
     images: [
-      '/Tree Planting/TreePlanting1.png',
-      '/Tree Planting/TreePlanting2.png',
-      '/Tree Planting/TreePlanting3.png',
-      '/Tree Planting/TreePlanting4.png',
-      '/Tree Planting/TreePlanting5.png',
-      '/Tree Planting/TreePlanting6.png',
-      '/Tree Planting/Treeplanting7.jpg',
+      '/TreePlanting/TreePlanting1.png',
+      '/TreePlanting/TreePlanting2.png',
+      '/TreePlanting/TreePlanting3.png',
+      '/TreePlanting/TreePlanting4.png',
+      '/TreePlanting/TreePlanting5.png',
+      '/TreePlanting/TreePlanting6.png',
+      '/TreePlanting/Treeplanting7.jpg',
     ]
   },
   {
@@ -57,15 +57,15 @@ export const CSR_SECTIONS: CSRSection[] = [
     description: ' Education is at the heart of strong communities. Ovialand donates classrooms in every barangay where we operate, creating better learning environments and supporting the growth of young minds.',
     items: [],
     images: [
-      '/Community_Building/CB1.png',
-      '/Community_Building/CB2.jpg',
-      '/Community_Building/CB3.jpg',
-      '/Community_Building/CB4.jpg',
-      '/Community_Building/CB5.jpg',
-      '/Community_Building/CB6.jpg',
-      '/Community_Building/CB7.png',
-      '/Community_Building/CB8.jpg',
-      '/Community_Building/CB9.jpg',
+      '/CommunityBuilding/CB1.png',
+      '/CommunityBuilding/CB2.jpg',
+      '/CommunityBuilding/CB3.jpg',
+      '/CommunityBuilding/CB4.jpg',
+      '/CommunityBuilding/CB5.jpg',
+      '/CommunityBuilding/CB6.jpg',
+      '/CommunityBuilding/CB7.png',
+      '/CommunityBuilding/CB8.jpg',
+      '/CommunityBuilding/CB9.jpg',
     ]
   },
   {

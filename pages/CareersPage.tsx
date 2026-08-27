@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageLayout from './PageLayout';
+import { ScrollReveal, ScrollContainer } from '../components/shared/ScrollReveal';
 
 const REGIONS = [
   {
@@ -46,14 +47,14 @@ const CareersPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-green-600 mb-4">Build Your Career at Ovialand</h2>
             <p className="text-gray-500 text-lg font-light leading-relaxed">
               Be part of a fast-growing real estate developer committed to Premier Family Living. We are always looking for driven and passionate individuals to join our growing team.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold text-green-600 mb-10 text-center">Open Positions</h3>
@@ -79,9 +80,9 @@ const CareersPage: React.FC = () => {
 
             <div className="relative min-h-50">
               <div className="animate-fadeIn">
-                <div className="space-y-4">
+                <ScrollContainer key={activeRegion} className="space-y-4">
                   {activeRegionObj?.positions.map((role) => (
-                    <div
+                    <ScrollReveal
                       key={role.title + role.location}
                       className="flex flex-col items-start bg-gray-50 rounded-xl px-6 py-4 hover:bg-green-50 transition-colors gap-2"
                     >
@@ -89,13 +90,13 @@ const CareersPage: React.FC = () => {
                         <p className="font-bold text-gray-800">{role.title}</p>
                         <p className="text-gray-400 text-sm">{role.type} · {role.location}</p>
                       </div>
-                    </div>
+                    </ScrollReveal>
                   ))}
-                </div>
+                </ScrollContainer>
               </div>
             </div>
 
-            <div className="mt-16 bg-green-600 rounded-3xl p-10 text-center">
+            <ScrollReveal className="mt-16 bg-green-600 rounded-3xl p-10 text-center">
               <h3 className="text-2xl font-bold text-white mb-3">Interested?</h3>
               <p className="text-white/80 font-light mb-6">
                 Send your resume to our HR team and we'll reach out when an opportunity arises.
@@ -106,7 +107,7 @@ const CareersPage: React.FC = () => {
               >
                 Apply Now
               </a>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

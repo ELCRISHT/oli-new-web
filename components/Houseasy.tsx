@@ -17,7 +17,7 @@ const Houseasy: React.FC<HouseasyProps> = ({ showButton = true, showImage = true
 					className="w-full block object-cover"
 				/>
 			)}
-			<div className="container mx-auto px-4 md:px-6 pt-8 md:pt-10 pb-16 md:pb-24">
+			<div className="container mx-auto px-6 pt-8 md:pt-10 pb-8 md:pb-12">
 				<ScrollContainer className="text-center">
 					<ScrollReveal>
 						<img

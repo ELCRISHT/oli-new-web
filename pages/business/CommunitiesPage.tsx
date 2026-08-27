@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PageLayout from '../PageLayout';
 import DevelopmentCard from '../../components/DevelopmentCard';
-import { DEVELOPMENTS } from '../../constants';
+import { DEVELOPMENTS } from '../../data/developments';
+import { ScrollReveal, ScrollContainer } from '../../components/shared/ScrollReveal';
 
 const southLuzon = DEVELOPMENTS.filter(d =>
   ['Laguna', 'Batangas', 'Quezon'].some(loc => d.location.includes(loc))
@@ -25,10 +26,10 @@ const CommunitiesPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-linear-to-b from-white to-gray-50">
+      <section className="py-12 md:py-16 bg-linear-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
 
-          <div className="flex justify-center mb-12">
+          <ScrollReveal className="flex justify-center mb-12">
             <div className="flex flex-wrap sm:inline-flex bg-gray-100 rounded-2xl sm:rounded-full p-1 gap-1 sm:gap-0 justify-center">
               <button
                 onClick={() => setActiveRegion('south')}
@@ -49,28 +50,32 @@ const CommunitiesPage: React.FC = () => {
                 Central Luzon
               </button>
             </div>
-          </div>
+          </ScrollReveal>
 
           <div className="relative min-h-100">
             {activeRegion === 'south' && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <ScrollContainer key="south" className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {southLuzon.map(dev => (
-                  <DevelopmentCard key={dev.id} development={dev} />
+                  <ScrollReveal key={dev.id}>
+                    <DevelopmentCard development={dev} />
+                  </ScrollReveal>
                 ))}
-              </div>
+              </ScrollContainer>
             )}
             {activeRegion === 'central' && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <ScrollContainer key="central" className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {centralLuzon.length > 0 ? (
                   centralLuzon.map(dev => (
-                    <DevelopmentCard key={dev.id} development={dev} />
+                    <ScrollReveal key={dev.id}>
+                      <DevelopmentCard development={dev} />
+                    </ScrollReveal>
                   ))
                 ) : (
                   <div className="col-span-4 text-center py-20 text-gray-400">
                     <p className="text-lg font-light">More communities coming soon in Central Luzon.</p>
                   </div>
                 )}
-              </div>
+              </ScrollContainer>
             )}
           </div>
         </div>

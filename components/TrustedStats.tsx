@@ -5,7 +5,7 @@ import { TRUSTED_STATS } from '../data/stats';
 const TrustedStats: React.FC = () => {
   return (
     <section id="trusted" className="py-8 md:py-12 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-green-600 mb-4 md:mb-6">Trusted Developer</h2>
           <p className="text-gray-600 text-base md:text-lg font-light leading-relaxed">
@@ -13,7 +13,7 @@ const TrustedStats: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
           {TRUSTED_STATS.map((stat, i) => (
             <StatItem key={i} stat={stat} />
           ))}
